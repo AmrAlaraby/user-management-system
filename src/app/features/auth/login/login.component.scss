@@ -1,0 +1,90 @@
+
+
+.my-container{
+    background: linear-gradient(71.17deg, #FEAF00 19.35%, #F8D442 90.12%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 30%;
+    width: 100%;
+}
+
+.login-container h1 {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.26px;
+    text-align: left;
+
+    border-left: 6px solid #F8D442;
+    
+}
+
+.sign-in-p{
+    font-family: Montserrat;
+font-size: 22px;
+font-weight: 600;
+line-height: 26.82px;
+text-align: center;
+
+}
+
+.credentials-p{
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 17.07px;
+text-align: center;
+color: #6C6C6C;
+
+}
+
+.lable{
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 500;
+line-height: 17.07px;
+text-align: left;
+color: #6C6C6C;
+
+
+}
+
+.form-group input{
+    border-color: #CDCDCD;
+}
+
+.form-group input::placeholder{
+    color: #CDCDCD;
+    font-family: Montserrat;
+font-size: 12px;
+font-weight: 400;
+line-height: 14.63px;
+text-align: left;
+
+
+}
+
+.btn-custom {
+    background-color: #FFB300;
+    color: white;
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 500;
+line-height: 17.07px;
+text-align: center;
+
+}
+
+.btn-custom:hover {
+    background-color: #FFA000;
+}
