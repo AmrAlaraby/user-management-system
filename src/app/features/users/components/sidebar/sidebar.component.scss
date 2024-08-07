@@ -1,0 +1,54 @@
+.my-side-bar{
+    height: 100vh;
+    background-color: #F2EAE1;
+}
+.my-logo{
+    font-family: Montserrat;
+font-size: 18px;
+font-weight: 700;
+line-height: 21.94px;
+text-align: left;
+border-left: 6px solid #F8D442;
+}
+.profile-pic{
+    border-radius: 50%;
+    max-width: 150px;
+    width: 80%;
+
+
+}
+.profile-pic-div{
+    width: 100%;
+
+}
+.name-profile{
+    font-family: Montserrat;
+font-size: 17px;
+font-weight: 700;
+line-height: 20.72px;
+text-align: center;
+
+}
+.role{
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 17.07px;
+text-align: center;
+color: #FEAF00;
+
+}
+.my-link{
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 17.07px;
+text-align: center;
+gap: 10px;
+border-radius: 5px;
+
+}
+.active-nav{
+    background: #FEAF00;
+
+}

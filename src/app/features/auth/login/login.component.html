@@ -3,6 +3,9 @@
         <h1 class="py-1 ps-2 mb-5">User Management System</h1>
         <p class="sign-in-p">SIGN IN</p>
         <p class="credentials-p">Enter your credentials to access your account</p>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
         <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
             <div class="form-group">
                 <label for="username" class="py-2 lable">username</label>
