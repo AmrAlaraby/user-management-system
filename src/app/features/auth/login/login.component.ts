@@ -33,7 +33,7 @@ this._authService.login(this.loginForm.value).subscribe({
   next : res=>{
      console.log(res)
      localStorage.setItem('userPayload',JSON.stringify(res))
-     this._router.navigate(['management-system'])
+     this._router.navigate(['management-system/all-users'])
   },
   error:err=> {
 this.errorMessage=err.error.message;

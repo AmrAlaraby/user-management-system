@@ -4,7 +4,7 @@
         
         <h2 class="my-header">Users List</h2>
 
-        <button type="button" class="btn px-4 my-btn">ADD NEW User</button>
+        <button type="button" [routerLink]="['/management-system/add-user']" class="btn px-4 my-btn">ADD NEW User</button>
 
     </div>
     </div>
@@ -17,7 +17,28 @@
         <div class="col-1 taple-head p-0">Date of admission</div>
 
     </div>
-    <div *ngFor="let item of users"  class="row card-bg py-2 align-items-center my-2">
+
+    <div *ngFor="let item of users">
+        <div *ngIf="item" class="row card-bg py-2 align-items-center my-2">
+
+
+        
+        
+
+        <div *ngIf=" item.id==idForDelete" class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+              </svg>
+            <div class="ps-1 mb-0 d-flex justify-content-between w-100 align-items-center">
+                <p class="mb-0">are you sure u want to delete user {{item.firstName}}</p>
+                <div>
+                   <button (click)="idForDelete = 0" type="button" class="btn btn-secondary mx-2">cancel</button>
+                   <button (click)="deleteUser(item.id)" type="button" class="btn btn-danger mx-2">yes</button> 
+                </div>
+                
+
+            </div>
+          </div>
 
         <div class="col-lg-2 col-md-4 col-sm-6 my-cols d-flex align-items-center"><img src={{item.image}} alt="user-pic" class="user-pic">  <span class="ps-3">{{item.firstName}}</span></div>
         <div class="col-lg-5 col-md-6 my-cols p-0">{{item.email}}</div>
@@ -26,11 +47,11 @@
         <div class="col-lg-1 col-md-4 col-sm-6 my-cols p-0">{{item.birthDate}}</div>
         <div class="col-lg-1 col-md-4 col-sm-6 my-cols p-0 d-flex align-items-center justify-content-end my-card-icons pe-2">
             <!--  -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+            <svg (click)="navToUpdate(item)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil pointer-my" viewBox="0 0 16 16">
             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
           </svg>
           <!--  -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+          <svg (click)="openDeleteAlert(item.id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3 pointer-my" viewBox="0 0 16 16">
             <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
           </svg>
 
@@ -38,6 +59,6 @@
         </div>
 
     </div>
-    
+</div>
 
 </div>

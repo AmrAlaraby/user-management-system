@@ -1,0 +1,43 @@
+<div class="container-fluid pt-3">
+    <div class="row">
+        <div class="d-flex justify-content-between border-bottom pb-2 my-border">
+        
+        <h2 class="my-header">Add User</h2>
+    </div>
+<div class="w-100 d-flex justify-content-center pt-5 mt-3">
+
+
+    <div class="w-75 border rounded shadow p-4 py-5">
+
+        
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+            <div class="form-group">
+                <label for="FirstName" class="py-2 lable">firstName</label>
+                <input type="text" formControlName="FirstName" class="form-control" id="FirstName" placeholder="Enter your FirstName">
+                <span class="text-danger" *ngIf="loginForm.controls?.['FirstName']?.hasError('required') && loginForm.controls?.['FirstName']?.touched">
+                    FirstName is <strong>required</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="py-2 lable">lastName</label>
+                <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Enter your lastName">
+                <span class="text-danger" *ngIf="loginForm.controls?.['lastName']?.hasError('required') && loginForm.controls?.['lastName']?.touched">
+                    lastName is <strong>required</strong>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="age" class="py-2 lable">Age</label>
+                <input type="number" formControlName="age" class="form-control" id="age" placeholder="Enter your age">
+                <span class="text-danger" *ngIf="loginForm.controls?.['age']?.hasError('required') && loginForm.controls?.['age']?.touched">
+                    age is <strong>required</strong>
+                </span>
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+                <button type="submit" class="btn btn-custom btn-block mt-3 w-50">Save</button>
+            </div>
+            
+        </form>
+    </div>
+    </div>
+</div>
+</div>

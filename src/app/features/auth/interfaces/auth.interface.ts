@@ -5,7 +5,7 @@ export interface loginResponse{
     firstName: string,
     lastName: string,
     gender: string,
-    image: string
+    image: string,
     token: string,
     refreshToken: string
   
