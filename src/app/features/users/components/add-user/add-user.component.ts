@@ -18,9 +18,12 @@ constructor(private _formBuilder:FormBuilder,private _userService:UsersService,p
   }
   initLoginForm(){
     this.loginForm= this._formBuilder.group({
-      FirstName:['',Validators.required],
+      firstName:['',Validators.required],
       lastName:['',Validators.required],
-      age:['',Validators.required]
+      age:['',Validators.required],
+      email:['',Validators.required], 
+      phone:['',Validators.required],
+      birthDate:['',Validators.required]
     })
   }
   submitLogin(){

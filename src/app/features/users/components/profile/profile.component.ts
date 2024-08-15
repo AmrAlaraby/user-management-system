@@ -18,12 +18,16 @@ export class ProfileComponent {
 constructor(private _formBuilder:FormBuilder,private _userService:UsersService,private _router:Router){}
   ngOnInit(): void {
     this.initLoginForm()
+    this.getMyUser()
   }
   initLoginForm(){
     this.loginForm= this._formBuilder.group({
-      FirstName:['',Validators.required],
+      firstName:['',Validators.required],
       lastName:['',Validators.required],
-      age:['',Validators.required]
+      age:['',Validators.required],
+      email:['',Validators.required], 
+      phone:['',Validators.required],
+      birthDate:['',Validators.required]
     })
   }
   getMyUser()
@@ -31,7 +35,10 @@ constructor(private _formBuilder:FormBuilder,private _userService:UsersService,p
     this._userService.getUserById(this.userpayload.id).subscribe({
       next : res=>{
          console.log(res)
-         this.myUser
+         this.myUser=res
+         console.log(this.myUser);
+         this.loginForm.patchValue({...res})
+         
 
       },
       error:err=> {

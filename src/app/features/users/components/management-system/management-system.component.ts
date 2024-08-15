@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-management-system',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./management-system.component.scss']
 })
 export class ManagementSystemComponent {
-
+  constructor(private _router:Router){}
+logout(){
+  console.log('logout');
+  localStorage.removeItem('userPayload')
+  this._router.navigate(['login'])
+  
+}
 }
